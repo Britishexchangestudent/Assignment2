@@ -1,0 +1,23 @@
+File 1- Creation of Database and Tables:
+-- List all current databases owned by you
+   SHOW DATABASES;
+-- Delete the database called yourwesternuseridassign2db if it exists
+   DELETE yourwesternuseridassign2db;
+-- Create a database called dahmed25assign2db
+   CREATE DATABASE dahmed25assign2db;
+-- Connect to (use) that database
+   USE dahmed25assign2db;
+-- Add these lines to make sure the t.a. has access to your database in order to mark this assignment:
+   GRANT USAGE ON *.* TO 'ta'@'localhost';
+   DROP USER 'ta'@'localhost';
+   CREATE USER 'ta'@'localhost' IDENTIFIED BY 'cs3319';
+   GRANT ALL PRIVILEGES ON yourwesternuseridassign2db.* TO 'ta'@'localhost';
+   FLUSH PRIVILEGES;
+-- List all the tables (should be none initially)
+   SHOW TABLES;
+-- Create the tables you need to solve the problem above with the appropriate types and keys, foreign keys.
+   CREATE TABLE Product (ProductID INT NOT NULL, Description varchar(20), Quantity int, Cost int, PRIMARY KEY (ProductID));
+   CREATE TABLE Customer (CustomerID INT NOT NULL, FirstName varchar(30), LastName varchar(30), City varchar(15), PhoneNumber int, PRIMARY KEY (CustomerID));
+   CREATE TABLE Agent (AgentID INT NOT NULL, FirstName varchar(30), LastName varchar(30), City varchar(15), Commision int, PRIMARY KEY (AgentID));
+-- List the tables again
+   SHOW TABLES;
