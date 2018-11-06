@@ -1,0 +1,2 @@
+SHOW * FROM Product;
+SELECT DISTINCT city FROM Customer;
